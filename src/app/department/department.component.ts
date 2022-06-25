@@ -94,7 +94,7 @@ export class DepartmentComponent implements OnInit {
           DepartmentIdFilter.toString().trim().toLowerCase()
         )&& 
           el.DepartmentName.toString().toLowerCase().includes(
-            DepartmentNameFilter.toString().trim().toLowerCase()
+          DepartmentNameFilter.toString().trim().toLowerCase()
         );
       }
     );
