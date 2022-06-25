@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -101,6 +102,16 @@ export class EmployeeComponent implements OnInit {
         this.refreshList();
       });
     }
+  }
+
+  imageUpload(event:any){
+    var file = event.target.files[0];
+    const formData: FormData = new FormData();
+    formData.append('file', file.name);
+
+    this.http.post(environment.API_URL+'employee/savefile', formData).subscribe((data:any) => {
+      this.PhotoFileName=data.toString();
+    });
   }
 
 }
